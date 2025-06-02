@@ -1,0 +1,14 @@
+{
+  "kind": "collectionType",
+  "collectionName": "programs_plural",
+  "info": {
+    "singularName": "programs",
+    "pluralName": "programs-plural",
+    "displayName": "Programs"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {}
+}
