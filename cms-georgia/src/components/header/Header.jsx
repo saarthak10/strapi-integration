@@ -11,6 +11,12 @@ const Header = () => {
   const handleOpenClick = () => {
     setShowGovHeader(!showGovHeader);
   };
+  const menu = [
+    {id:1, title:'About '},
+    {id:2, title:'Community Assistance '},
+    {id:3, title:'Financing tools '},
+    {id:4, title:'Affordable Housing '},
+  ]
   return (
     <div>
       <div class="bg-blue-dark">
@@ -66,6 +72,14 @@ const Header = () => {
         <img  width={'90px'} height={'90px'} class=" -mt-8 bg-white rounded-t-full px-3 py-3" src={brandingIcon} />
         <img src={brandingSecondIcon} width={'150px'} height={'50px'} class="border-l-2 border-yellow-icon pl-3" />
         <p class="m-3 w-xs text-xl font-semibold"> GEORGIA DEPARTMENT <em>of</em> COMMUNITY AFFAIRS</p>
+      </div>
+      <div class="py-3 px-6 flex bg-gray-50">
+       {menu.map((item)=>(
+          <div class="flex mr-9" key={item.id}>
+            <p>{item.title}</p>  
+            <img />
+          </div>
+       ))}
       </div>
     </div>
   );
