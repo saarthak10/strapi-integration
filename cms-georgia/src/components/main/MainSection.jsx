@@ -28,14 +28,18 @@ const MainSection = ({programs, blogs}) => {
 
 
     </div>
-    <div class="bg-white py-22 px-8">
+    <div class="bg-gray-50 py-22 px-8">
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {blogs?.data.map((blog)=>(
-              <div class="">
+          {blogs?.data?.map((blog)=>(
+              <div class="bg-white rounded-sm">
               <img class="rounded-sm hover:bg-black-shadow " src={`http://localhost:1337${blog?.image?.url}`} />
-              <p>{blog.title }</p>
-              <p>{blog.description}</p>
-              <p>{blog.anchor}</p>
+              <div class="px-8 py-8">
+
+              <h2 class="font-semibold text-4xl py-4">{blog.title }</h2>
+              <p class="text-base  py-4">{blog.description}</p>
+              <a class="text-xl text-black-shadow py-4 hover:underline underline-offset-2 hover:decoration-green-500">{blog.anchor}</a>
+
+              </div>
               </div>
 
           ))}  
