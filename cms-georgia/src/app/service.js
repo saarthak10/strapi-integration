@@ -7,14 +7,17 @@ export const strapiApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:1337/api/' }),
   endpoints: (builder) => ({
     getProgramsList: builder.query({
-      query: () => `programs-plural?populate=*`,
+      query: (locale) => `programs-plural?populate=*&locale=${locale}`,
     }),
     getBlogsList: builder.query({
-      query: () => `blogs-list?populate=*`,
+      query: (locale) => `blogs-list?populate=*&locale=${locale}`,
     }),
+    getMainContent: builder.query({
+      query: (locale) => `main-contents?populate=*&locale=${locale}`
+    })
   }),
 })
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetProgramsListQuery, useGetBlogsListQuery } = strapiApi
+export const { useGetProgramsListQuery, useGetBlogsListQuery, useGetMainContentQuery } = strapiApi
