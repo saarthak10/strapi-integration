@@ -1,13 +1,12 @@
 module.exports = {
-  routes: [
-    // {
-    //  method: 'GET',
-    //  path: '/webhook',
-    //  handler: 'webhook.exampleAction',
-    //  config: {
-    //    policies: [],
-    //    middlewares: [],
-    //  },
-    // },
+   routes: [
+    {
+      method: 'POST',
+      path: '/webhook-handler',
+      handler: 'webhook.handle',
+      config: {
+        auth: false, // change to true if you want to secure it later
+      },
+    },
   ],
 };

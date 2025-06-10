@@ -4,4 +4,7 @@
  * webhook service
  */
 
-module.exports = () => ({});
+module.exports = () => ({
+  routes: require('./routes/webhook'),
+  controllers: require('./controllers/webhook'),
+});
