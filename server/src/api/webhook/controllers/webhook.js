@@ -4,7 +4,6 @@ module.exports = {
   async handle(ctx) {
     try {
       const body = ctx.request.body;
-      console.log("RECEIVED DATA===>", body)
       // Example: Extract data from the incoming webhook payload
       const { eventType, entityId, message } = body;
 
@@ -15,9 +14,13 @@ module.exports = {
       //     meta: body,
       //   },
       // });
-      await strapi.entityService.
-
-      ctx.send({ status: 'ok' });
+    // Emit to frontend via socket
+    strapi.io.emit("webhook_event", {
+      message: "Programs updated",
+      timestamp: new Date(),
+    });
+    
+    return ctx.send({ received: true });
     } catch (err) {
       console.error('Webhook error:', err);
       ctx.status = 500;
